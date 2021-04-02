@@ -67,7 +67,7 @@ app.post("/compose", function(req, res) {
 
 app.get("/posts/:postID", function(req, res) {
   let requestedID = req.params.postID;
-  Blog.findById(requestedTitle, function(err, post) {
+  Blog.findById(requestedID, function(err, post) {
     res.render("post", {
       postTitle: post.title,
       postContent: post.content
